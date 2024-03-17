@@ -1,4 +1,4 @@
-package com.marvel.superheros.superheros.api.domain.dto;
+package com.marvel.superheroes.superheroes.api.domain.dto;
 
 public class HeroDTO {
 }
