@@ -26,9 +26,9 @@ public class SuperHerosServiceImpl implements SuperHerosService {
 
     @Override
     public Mono<Object> addHero(HeroDAO dao) {
-        if(!getFullHeros().stream().map(HeroDAO::getHeroNickname).toList().contains(dao.getHeroNickname())) {
+        if (!getFullHeros().stream().map(HeroDAO::getHeroNickname).toList().contains(dao.getHeroNickname())) {
             return Mono.just(repository.save(dao));
-        }else {
+        } else {
             return Mono.just(new ResponseEntity<>(getErrorDTO(HttpStatus.UNPROCESSABLE_ENTITY, ERR_3011.getMessage()), HttpStatus.UNPROCESSABLE_ENTITY));
         }
     }
@@ -45,9 +45,9 @@ public class SuperHerosServiceImpl implements SuperHerosService {
 
     @Override
     public Mono<Object> updateHero(HeroDAO dao) {
-        if(getFullHeros().stream().map(HeroDAO::getHeroNickname).toList().contains(dao.getHeroNickname())) {
+        if (getFullHeros().stream().map(HeroDAO::getHeroNickname).toList().contains(dao.getHeroNickname())) {
             return Mono.just(repository.save(dao));
-        }else {
+        } else {
             return Mono.just(new ResponseEntity<>(getErrorDTO(HttpStatus.UNPROCESSABLE_ENTITY, ERR_3011.getMessage()), HttpStatus.UNPROCESSABLE_ENTITY));
         }
     }
