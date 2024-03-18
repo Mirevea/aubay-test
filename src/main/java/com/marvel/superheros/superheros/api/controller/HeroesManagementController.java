@@ -30,5 +30,8 @@ public interface HeroesManagementController {
 
     @GetMapping(value = "getHero", produces = MediaType.APPLICATION_JSON_VALUE)
     Mono<ResponseEntity<HeroDTO>> getHeroById (@PathVariable String id) throws ResponseException;
+
+    @GetMapping(value = "getHeroByFilter", produces = MediaType.APPLICATION_JSON_VALUE)
+    Mono<ResponseEntity<List<HeroDTO>>> getHeroByFilter (@PathVariable String nameSeq) throws ResponseException;
 }
 

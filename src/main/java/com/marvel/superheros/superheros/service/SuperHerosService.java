@@ -19,4 +19,6 @@ public interface SuperHerosService {
     Mono<Object> updateHero(HeroDAO heroDTOtoDAO);
 
     boolean deleteHeroById(long id);
+
+    List<HeroDAO> getHeroByFilter(String seq);
 }

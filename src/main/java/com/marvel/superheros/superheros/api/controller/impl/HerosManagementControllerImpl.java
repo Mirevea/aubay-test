@@ -61,7 +61,7 @@ public class HerosManagementControllerImpl implements HeroesManagementController
         return Mono.just(new ResponseEntity<>(superHerosSvc.getAllHeros()
                 .stream()
                 .map(hero -> mapper.heroDAOtoDTO(hero))
-                .collect(Collectors.toList()),
+                .toList(),
                 HttpStatus.OK));
     }
 
@@ -71,5 +71,14 @@ public class HerosManagementControllerImpl implements HeroesManagementController
         return hero
                 .map(heroDTO -> Mono.just(new ResponseEntity<>(heroDTO, HttpStatus.OK)))
                 .orElseGet(() -> Mono.just(new ResponseEntity<>(null, HttpStatus.NOT_FOUND)));
+    }
+
+    @Override
+    public Mono<ResponseEntity<List<HeroDTO>>> getHeroByFilter(String nameSeq) throws ResponseException {
+        return Mono.just(new ResponseEntity<>(superHerosSvc.getHeroByFilter(nameSeq)
+                .stream()
+                .map(hero -> mapper.heroDAOtoDTO(hero))
+                .toList(),
+                HttpStatus.OK));
     }
 }

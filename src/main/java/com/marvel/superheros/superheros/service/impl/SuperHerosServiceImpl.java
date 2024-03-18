@@ -13,7 +13,7 @@ import reactor.core.publisher.Mono;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
+import java.util.stream.Collectors;
 
 import static com.marvel.superheros.superheros.util.Constants.ErrorCodeEnum.ERR_3011;
 import static com.marvel.superheros.superheros.util.Utils.getErrorDTO;
@@ -64,6 +64,11 @@ public class SuperHerosServiceImpl implements SuperHerosService {
         }
 
         return isDeleted;
+    }
+
+    @Override
+    public List<HeroDAO> getHeroByFilter(String seq) {
+        return getFullHeros().stream().filter(hero -> hero.getHeroNickname().contains(seq)).toList();
     }
 
     public List<HeroDAO> getFullHeros() {
