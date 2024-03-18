@@ -13,7 +13,6 @@ import reactor.core.publisher.Mono;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import static com.marvel.superheros.superheros.util.Constants.ErrorCodeEnum.ERR_3011;
 import static com.marvel.superheros.superheros.util.Utils.getErrorDTO;

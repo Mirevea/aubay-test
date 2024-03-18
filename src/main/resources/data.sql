@@ -6,4 +6,4 @@ VALUES (1, 'Tony Stark', 'Armadura superfuerza regenerativa', '100', 'Iron Man',
 (5, 'Bruce Banner', 'Monstruo radioactivo', '166', 'Hulk', 'Tierra'),
 (6, 'Stephen Vincent Strange', 'Magia del multiverso', '142', 'Dr Strange', 'Tierra'),
 (7, 'Mantis', 'Manipular y sentir sentimientos ajenos', '66', 'Mantis', 'Knowhere'),
-(8, 'Gamora', 'Asesina', '70', 'Gamora', 'Zen-Whoberi')
+(8, 'Gamora', 'Asesina', '70', 'Gamora', 'Zen-Whoberi');

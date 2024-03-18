@@ -1,15 +1,15 @@
 package com.marvel.superheros.superheros.domain.entities;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 
 @Getter
 @Setter
 @Entity
 @NoArgsConstructor
+@AllArgsConstructor
+@RequiredArgsConstructor
 public class HeroDAO {
 
     @Id
@@ -26,5 +26,4 @@ public class HeroDAO {
     private String heroNickname;
     @Column(nullable = false)
     private String origin;
-
 }
