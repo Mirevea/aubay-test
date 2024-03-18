@@ -1,15 +1,15 @@
 package com.marvel.superheros.superheros;
 
-import com.marvel.superheros.superheros.api.controller.impl.HerosManagementControllerImpl;
 import com.marvel.superheros.superheros.domain.entities.HeroDAO;
 import com.marvel.superheros.superheros.repository.HerosRepository;
 import com.marvel.superheros.superheros.service.impl.SuperHerosServiceImpl;
+import org.apache.catalina.core.ApplicationContext;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +24,9 @@ import static org.mockito.Mockito.*;
 class SuperHerosServiceImplTest {
     private final String username = "b36dbc74-1498-49bd-adec-0b53c2b268f8";
 
+    @Autowired
+    private ApplicationContext context;
+
     @InjectMocks
     private SuperHerosServiceImpl superHerosService;
 
@@ -33,6 +36,12 @@ class SuperHerosServiceImplTest {
     @BeforeEach
     void setUp() {
         MockitoAnnotations.initMocks(this);
+    }
+
+
+    @Test
+    void contextLoads() {
+        assertNotNull(this.context);
     }
 
     @Test

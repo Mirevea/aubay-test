@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.marvel.superheros</groupId>
 	<artifactId>superheros</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>superheros</name>
 	<description>Superheros Management API service</description>
 	<properties>

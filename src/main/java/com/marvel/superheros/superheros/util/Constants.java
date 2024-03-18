@@ -10,8 +10,13 @@ public class Constants {
 
         private String message;
 
-        ErrorCodeEnum(String message) { this.message = message;}
-        public String getErrorCode() { return this.name().replace("_", "-");}
+        ErrorCodeEnum(String message) {
+            this.message = message;
+        }
+
+        public String getErrorCode() {
+            return this.name().replace("_", "-");
+        }
 
     }
 }

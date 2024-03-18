@@ -17,21 +17,21 @@ import java.util.List;
 public interface HeroesManagementController {
 
     @PostMapping(value = "addHero", produces = MediaType.APPLICATION_JSON_VALUE)
-    Mono<ResponseEntity<Object>> addNewHero (@RequestBody HeroDTO dto) throws ResponseException;
+    Mono<ResponseEntity<Object>> addNewHero(@RequestBody HeroDTO dto) throws ResponseException;
 
     @PutMapping(value = "modifyHero", produces = MediaType.APPLICATION_JSON_VALUE)
-    Mono<ResponseEntity<Object>> modifyHero (@RequestBody HeroDTO dto) throws ResponseException;
+    Mono<ResponseEntity<Object>> modifyHero(@RequestBody HeroDTO dto) throws ResponseException;
 
     @DeleteMapping(value = "disableHero", produces = MediaType.APPLICATION_JSON_VALUE)
-    Mono<ResponseEntity<HttpStatus>> disableHero (@PathVariable long id) throws ResponseException;
+    Mono<ResponseEntity<HttpStatus>> disableHero(@PathVariable long id) throws ResponseException;
 
     @GetMapping(value = "listHeroes", produces = MediaType.APPLICATION_JSON_VALUE)
-    Mono<ResponseEntity<List<HeroDTO>>> getAllHeros () throws ResponseException;
+    Mono<ResponseEntity<List<HeroDTO>>> getAllHeros() throws ResponseException;
 
     @GetMapping(value = "getHero", produces = MediaType.APPLICATION_JSON_VALUE)
-    Mono<ResponseEntity<HeroDTO>> getHeroById (@PathVariable String id) throws ResponseException;
+    Mono<ResponseEntity<HeroDTO>> getHeroById(@PathVariable String id) throws ResponseException;
 
     @GetMapping(value = "getHeroByFilter", produces = MediaType.APPLICATION_JSON_VALUE)
-    Mono<ResponseEntity<List<HeroDTO>>> getHeroByFilter (@PathVariable String nameSeq) throws ResponseException;
+    Mono<ResponseEntity<List<HeroDTO>>> getHeroByFilter(@PathVariable String nameSeq) throws ResponseException;
 }
 
