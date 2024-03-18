@@ -19,6 +19,7 @@ public class SwaggerConfiguration {
 
     /**
      * Publish a bean to generate swagger2 endpoints
+     *
      * @return a swagger configuration bean
      */
     @Bean
